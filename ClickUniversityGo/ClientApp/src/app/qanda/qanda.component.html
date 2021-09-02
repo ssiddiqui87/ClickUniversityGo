@@ -1,0 +1,35 @@
+<h2 class="heading" style="text-align: center;">Questions</h2>
+<div *ngFor="let question of questions; let i = index" class="questionsDisplay">
+  <div>
+    <a [routerLink]="[question.id]">
+      <h3>{{question.title}}</h3>
+    </a>
+    <!--<h4>{{question.detail}}</h4>-->
+    <p>Posted by {{question.email}} {{question.posted | date:'short' }}</p>
+  </div>
+</div>
+  <div>
+    <div style="margin-bottom:100px;" class="myaccordion" id="accordionExample">
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h2 class="mb-0">
+            <button style="width:100%; text-align:center;" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <h3><strong>Add New Question</strong></h3>
+            </button>
+          </h2>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+          <div class="card-body">
+            <input type="hidden" id="email" [(ngModel)]="newEmail" class="form-control">
+            Title: <input type="text" id="title" [(ngModel)]="newTitle" class="form-control"><br />
+            Detail: <input type="text" id="detail" [(ngModel)]="newDetail" class="form-control"><br />
+            Category: <input type="text" id="category" [(ngModel)]="newCategory" class="form-control"><br />
+            Tags: <input type="text" id="tags" [(ngModel)]="newTags" class="form-control"><br />
+            <button (click)="addNewQuestion()" onClick="location.href='/q-and-a'" class="btn btn-outline-info btn-block" type="submit">Add Question</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+

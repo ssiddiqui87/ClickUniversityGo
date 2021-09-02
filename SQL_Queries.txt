@@ -1,0 +1,167 @@
+USE ClickUniversityGoDB
+
+CREATE TABLE Universities (
+	ID int NOT NULL PRIMARY KEY IDENTITY(1,1),
+	UniversityName NVARCHAR (500),
+	Website NVARCHAR (100),
+	State NVARCHAR (50),
+	CostOnCampusInState INT,
+	CostOnCampusOutOfState INT,
+	CostOffCampusInState INT,
+	CostOffCampusOutOfState INT,
+	PercentAdmitted TINYINT,
+	UndergradEnrollment INT,
+	NumAssociate INT,
+	NumBachelor INT,
+	GraduationRate TINYINT,
+	ACTComposite INT,
+	SATReadWrite INT,
+	SATMath INT,
+	ProgramEducation INT,
+	ProgramEngineering INT,
+	ProgramScience INT,
+	ProgramMath INT,
+	ProgramPhysicalScience INT,
+	ProgramBusiness INT,
+);
+
+CREATE TABLE UserProfiles (
+	ID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	Email NVARCHAR (256),
+	HomeState NVARCHAR (50),
+	ACTScore INT,
+	SATScore INT,
+	DesiredState NVARCHAR (50)
+);
+
+CREATE TABLE Favorites (
+	ID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	Email NVARCHAR (256),
+	UniversityID INT
+);
+
+---------------------------------------------------------------
+------------------- Question & Answers ------------------------
+---------------------------------------------------------------
+CREATE TABLE Answers(
+	ID INT IDENTITY(1,1) NOT NULL,
+	Email NVARCHAR (500) NOT NULL,
+	Detail NVARCHAR (4000) NOT NULL,
+	QuestionID INT NOT NULL,
+	Posted DATETIME NOT NULL,
+	Upvotes INT NOT NULL,
+ CONSTRAINT PK_Answers PRIMARY KEY CLUSTERED 
+(
+	Id ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+CREATE TABLE Questions(
+	ID INT IDENTITY(1000,1) NOT NULL,
+	Email NVARCHAR(30) NOT NULL,
+	Title NVARCHAR(200) NOT NULL,
+	Detail NVARCHAR(4000) NOT NULL,
+	Posted DATETIME NOT NULL,
+	Category NVARCHAR(30) NOT NULL,
+	Tags NVARCHAR(200) NULL,
+	Status INT NOT NULL,
+ CONSTRAINT PK_Questions PRIMARY KEY CLUSTERED 
+(
+	Id ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE Answers  WITH CHECK ADD  CONSTRAINT FK_Questions_Answers FOREIGN KEY(QuestionId)
+REFERENCES Questions (Id)
+GO
+ALTER TABLE Answers CHECK CONSTRAINT FK_Questions_Answers
+GO
+USE [master]
+GO
+ALTER DATABASE ClickUniversityGoDB SET READ_WRITE 
+GO
+
+DELETE FROM Universities 
+WHERE (Website IS NULL
+OR NumBachelor IS NULL
+OR PercentAdmitted IS NULL
+OR GraduationRate IS NULL
+OR UndergradEnrollment IS NULL
+OR UndergradEnrollment <= 200
+OR (ProgramEducation IS NULL 
+	AND ProgramEngineering IS NULL 
+	AND ProgramScience IS NULL
+	AND ProgramMath IS NULL
+	AND ProgramPhysicalScience IS NULL
+	AND ProgramBusiness IS NULL))
+OR Website IN ('www.bentley.edu'
+				,'www.cpp.edu'
+				,'www.bridgew.edu'
+				,'www.dbu.edu'
+				,'www.denison.edu'
+				, 'www.hbu.edu'
+				,'www.iuk.edu'
+				,'www.iun.edu'
+				, 'www.kcu.edu'
+				,'www.mtsu.edu'
+				,'northcentralcollege.edu'
+				,'www.sau.edu'
+				,'www.siue.edu'
+				,'www.sckans.edu'
+				,'www.southwestern.edu'
+				,'www.plattsburgh.edu'
+				,'www.utep.edu'
+				,'www.tougaloo.edu'
+				,'www.usmma.edu'
+				,'www.uaf.edu'
+				,'www.ucumberlands.edu'
+				,'www.vanguard.edu'
+				,'www.vcsu.edu'
+				,'www.vmi.edu'
+				,'www.css.edu'
+				,'www.wssu.edu'
+				,'www.wcmo.edu'
+				,'www.wju.edu'
+				,'www.bridgewater.edu/about-us'
+				,'www2.ccsu.edu/'
+				,'www.eiu.edu/'
+				,'www.ju.edu/index.php'
+				,'www.johnsonu.edu/Home'
+				,'www.umkc.edu/'
+				,'liu.edu/CWPost'
+				,'www.nyack.edu/consumerinfo'
+				,'www.cobleskill.edu/'
+				,'ualr.edu/www/'
+				,'w.umwestern.edu/'
+				,'williamsbaptistuniversity.com/'
+				,'www.d.umn.edu/'
+				,'wmich.edu/'
+				,'www.warner.edu/academics/undergraduate_programs/admissions/criteria-for-admission/'
+				,'www.eastern.edu/about/student-consumer-information'
+				,'www.fhu.edu'
+				,'www.lacollege.edu'
+				,'www.nsula.edu/'
+				,'www.ulm.edu'
+				,'www.txwes.edu'
+				,'www.pfw.edu'
+				,'www.fitnyc.edu'
+				,'www.warnerpacific.edu/'
+				,'www.acphs.edu'
+				,'www.fitnyc.edu'
+				,'www.warnerpacific.edu/'
+				,'www.brescia.edu'
+				,'www.centralmethodist.edu/'
+				,'www.dyc.edu'
+				,'www.dordt.edu'
+				,'www.grandview.edu'
+				,'www.hendrix.edu'
+				,'www.LBC.edu'
+				,'www.mvnu.edu'
+				,'greaterallegheny.psu.edu/'
+				,'behrend.psu.edu/'
+				,'newkensington.psu.edu/'
+				,'sjcny.edu'
+				,'www.sjcny.edu'
+				,'www.trine.edu/adult-studies/index.aspx'
+				,'www.ursuline.edu'
+				)

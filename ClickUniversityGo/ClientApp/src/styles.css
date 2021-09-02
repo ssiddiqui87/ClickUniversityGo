@@ -1,0 +1,262 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Provide sufficient contrast against white background */
+
+body {
+  /*background: linear-gradient(to left, #8e9eab, #eef2f3);*/
+  /*background-color: #e4dcd9;*/
+  background: linear-gradient(to right, #ece9e6, #ffffff);
+}
+a {
+  color: #0366d6;
+}
+
+code {
+  color: #e01a76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.jumbotron {
+  background-image: url('src/assets/CollegePhotos/CampusBuilding.png');
+  background-size: auto;
+}
+
+.jumboDisplay {
+  border-radius: 10px;
+  border: 4px;
+  border-style: solid;
+  font-family: 'Century Gothic';
+  /*box-shadow: 3px 3px 3px 3px #d9d9d9;*/
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  border-style: solid;
+  border-color: black;
+  border: 2px;
+  border-radius: 4px;
+}
+
+/*.detailsStyle {
+  background-image: url('src/assets/CollegePhotos/ivyPath.png');
+  background-size: 100%;
+}
+
+/*.image-wrapper {
+  width: 100%;
+  height: 100%;
+  background: url('src/assets/CollegePhotos/ivyPath.png') no-repeat;
+  background-size: cover;
+  padding: 5px;
+  margin: auto;
+}*/
+
+/*.tableBckImg {
+  background: url('src/assets/CollegePhotos/ivyPath.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}*/
+
+.universitiesDisplay {
+  background-color: white;
+  min-width: 1000px;
+  max-height: 600px;
+  margin: 25px;
+  border-radius: 5px;
+  border: 1px;
+  border-color: black;
+  /*border-style: solid;*/
+  font-family: 'Century Gothic';
+  box-shadow: 5px 5px 5px 5px #d9d9d9;
+}
+
+.logoImages {
+  border-radius: 1000px;
+  border: 1px;
+  border-color: black;
+  border-style: solid;
+  height: 50px;
+  margin-left: 250px;
+}
+
+.questionsDisplay {
+  background-color: white;
+  min-width: 1000px;
+  max-height: 600px;
+  margin: 25px;
+  border-radius: 5px;
+  border: 1px;
+  border-color: black;
+  /*border-style: solid;*/
+  font-family: 'Century Gothic';
+  box-shadow: 5px 5px 5px 5px #d9d9d9;
+  padding: 20px;
+}
+
+.answersDisplay {
+  background-color: white;
+  min-width: 1000px;
+  max-height: 600px;
+  margin: 25px;
+  border-radius: 5px;
+  border: 1px;
+  border-color: black;
+  /*border-style: solid;*/
+  font-family: 'Century Gothic';
+  box-shadow: 5px 5px 5px 5px #d9d9d9;
+  padding: 20px;
+}
+
+.divCenter{
+    margin: 0 auto;
+    width: 500px;
+}
+
+.voteButton {
+  background-color: #44c767;
+  border-radius: 42px;
+  border: 3px solid #18ab29;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 17px;
+  padding: 2px 0px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #2f6627;
+  margin-right:3px;
+}
+
+  .voteButton:hover {
+    background-color: #5cbf2a;
+  }
+
+  .voteButton:active {
+    position: relative;
+    top: 1px;
+  }
+
+
+.faveButton {
+  box-shadow: inset 0px 1px 0px 0px #9fb4f2;
+  background: linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+  background-color: #7892c2;
+  border-radius: 3px;
+  border: 1px solid #4e6096;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: 'Century Gothic';
+  font-size: 13px;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #283966;
+}
+
+  .faveButton:hover {
+    background: linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+    background-color: #476e9e;
+  }
+
+  .faveButton:active {
+    position: relative;
+    top: 1px;
+  }
+
+
+.clearFilters {
+  box-shadow: inset 0px 1px 0px 0px #ffffff;
+  background: linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+  background-color: #f9f9f9;
+  border-radius: 3px;
+  border: 1px solid #dcdcdc;
+  display: inline-block;
+  cursor: pointer;
+  color: #666666;
+  font-family: 'Century Gothic';
+  font-size: 13px;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #ffffff;
+  margin-left: 5px;
+}
+
+  .clearFilters:hover {
+    background: linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+    background-color: #e9e9e9;
+  }
+
+  .clearFilters:active {
+    position: relative;
+    top: 1px;
+  }
+
+.universityDetail {
+  border: 1px black;
+  border-radius: 12px;
+  border-width: 6px;
+  box-shadow: 5px 5px 5px 5px #d9d9d9;
+  padding: 40px;
+  height: 1200px;
+  margin-top:30px;
+}
+
+.websiteUniversityDetail {
+    text-align: center;
+    font-size: 20px;
+    
+}
+
+.myaccordion {
+  max-width: 800px;
+  margin: 50px auto;
+  box-shadow: 0 0 1px rgba(0,0,0,0.1);
+  background: transparent;
+}
+
+  .myaccordion .card,
+  .myaccordion .card:last-child .card-header {
+    border: none;
+    background: transparent;
+  }
+
+  .myaccordion .card-header {
+    border-bottom-color: #EDEFF0;
+    background: transparent;
+  }
+
+  .myaccordion .fa-stack {
+    font-size: 18px;
+    background: transparent;
+  }
+
+  .myaccordion .btn {
+    width: 100%;
+    font-weight: bold;
+    color: #004987;
+    padding: 0;
+    background: transparent;
+  }
+
+  .myaccordion .btn-link:hover,
+  .myaccordion .btn-link:focus {
+    text-decoration: none;
+    background: transparent;
+  }
+
+  .myaccordion li + li {
+    margin-top: 10px;
+    background: transparent;
+  }
+
+.button {
+  color: white;
+}
