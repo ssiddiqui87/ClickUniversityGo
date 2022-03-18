@@ -33,6 +33,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\Migrations\20220318001736_new.cs" />
+    <Compile Remove="Data\Migrations\20220318001736_new.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="ClientApp\src\app\interfaces\favorite.ts" />
     <None Remove="ClientApp\src\app\interfaces\qandA.ts" />
     <None Remove="ClientApp\src\app\interfaces\university.ts" />
